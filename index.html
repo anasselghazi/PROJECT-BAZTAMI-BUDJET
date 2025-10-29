@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baztami - Gestion du budget</title>
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen text-gray-800">
+
+  <!--header-->
+  <header class="bg-indigo-600  py-4  shadow-md">
+    <h1 class="text-center text-3xl text-white font-bold flex justify-center items-center gap-2">
+      <i data-lucide="wallet" class="w-6 h-6"></i> Baztami - Budget
+    </h1>
+  </header>
+
+<!--les card-->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+    <div class="bg-green-100 p-4 rounded-xl   text-center">
+      <h2 class="text-lg font-semibold">Total Revenus (+)</h2>
+      <p id="total-income" class="text-3xl font-bold text-green-600">0 €</p>
+    </div>
+
+    <div class="bg-red-100 p-4 rounded-xl text-center">
+      <h2 class="text-lg font-semibold">Total Dépenses (–)</h2>
+      <p id="total-expense" class="text-3xl font-bold text-red-600">0 €</p>
+    </div>
+
+    <div class="bg-indigo-100 p-4 rounded-xl   text-center">
+      <h2 class="text-lg font-semibold">Solde Net</h2>
+      <p id="net-balance" class="text-3xl font-bold text-purple-700">0 €</p>
+
+    </div>
+  </section>
+
+  <!-- FORMULAIRE DE LA TRANSACTION -->
+  <section class="bg-white p-6 mx-4 rounded-xl  ">
+    <h2 class="text-2xl font-bold mb-4">Ajouter une transaction</h2>
+    <form id="transaction-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <input id="description" type="text" placeholder="Description" required class="border p-2 rounded-lg" />
+      <input id="amount" type="number" placeholder="Montant (€)" required class="border p-2 rounded-lg" />
+      <select id="type" class="border p-2 rounded-lg">
+        <option value="income">Revenu</option>
+        <option value="expense">Dépense</option>
+        
+      </select>
+      <input id="date" type="date" required class="border p-2 rounded-lg" />
+      <button type="submit" class="col-span-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg">
+        Ajouter
+      </button>
+    </form>
+  </section>
+
+   
