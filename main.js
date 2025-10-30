@@ -102,4 +102,12 @@ function renderTransactions() {
   netBalance.style.color = balance >= 0 ? "green" : "red";
 }
 
+// Supprimer une transaction
+function deleteTransaction(id) {
+  if (confirm("Voulez-vous vraiment supprimer cette transaction ?")) {
+    transactions = transactions.filter((t) => t.id !== id);
+    saveAndRender();
+  }
+}
+
  
