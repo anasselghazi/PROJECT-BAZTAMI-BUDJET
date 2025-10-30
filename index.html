@@ -14,7 +14,10 @@
 <body class="bg-gray-100 min-h-screen text-gray-800">
 
   <!--header-->
-  <header class="bg-indigo-600  py-4  shadow-md">
+  
+  <header class="bg-indigo-600  py-4  shadow-md ">
+    
+    <!--logo-->
     <h1 class="text-center text-3xl text-white font-bold flex justify-center items-center gap-2">
       <i data-lucide="wallet" class="w-6 h-6"></i> Baztami - Budget
     </h1>
@@ -40,8 +43,9 @@
   </section>
 
   <!-- FORMULAIRE DE LA TRANSACTION -->
-  <section class="bg-white p-6 mx-4 rounded-xl  ">
-    <h2 class="text-2xl font-bold mb-4">Ajouter une transaction</h2>
+  <section class="bg-white p-6 mx-4 rounded-xl ">
+     
+    <h2 class="text-2xl font-bold mb-4">Ajouter une transaction </h2>
     <form id="transaction-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <input id="description" type="text" placeholder="Description" required class="border p-2 rounded-lg" />
       <input id="amount" type="number" placeholder="Montant (€)" required class="border p-2 rounded-lg" />
@@ -57,4 +61,15 @@
     </form>
   </section>
 
-   
+   <!-- HISTORIQUE -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Historique</h2>
+    <div id="transactions-list" class="space-y-4"></div>
+  </section>
+
+  <script src=""></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
