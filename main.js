@@ -109,5 +109,21 @@ function deleteTransaction(id) {
     saveAndRender();
   }
 }
+// Modifier une transaction
+function editTransaction(id) {
+  const t = transactions.find((t) => t.id === id);
+  if (!t) return;
+
+  // Remplir le formulaire avec les données existantes
+  descriptionInput.value = t.description;
+  amountInput.value = t.amount;
+  typeInput.value = t.type;
+  dateInput.value = t.date;
+
+  // Passer en mode édition
+  editId = id;
+  form.querySelector("button[type='submit']").textContent = "Modifier";
+  descriptionInput.focus();
+}
 
  
