@@ -1,4 +1,4 @@
-//   LES VARIABLES 
+ // Sélection des éléments
 const form = document.getElementById("transaction-form");
 const descriptionInput = document.getElementById("description");
 const amountInput = document.getElementById("amount");
@@ -9,16 +9,16 @@ const totalIncome = document.getElementById("total-income");
 const totalExpense = document.getElementById("total-expense");
 const netBalance = document.getElementById("net-balance");
 
-//  localStorage
+// Charger les transactions depuis le localStorage
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-// Variable pour modification
+// Variable pour savoir si on est en mode édition
 let editId = null;
- 
+
 // Afficher les transactions existantes
 renderTransactions();
 
-// Ajouter ou modifier une transaction
+// Événement : ajouter ou modifier une transaction
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -83,7 +83,7 @@ function renderTransactions() {
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
         </button>
         <button onclick="deleteTransaction(${t.id})" class="text-gray-500 hover:text-red-500">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pill-bottle-icon lucide-pill-bottle"><path d="M18 11h-4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h4"/><path d="M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7"/><rect width="16" height="5" x="4" y="2" rx="1"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
         </button>
       </div>
     `;
@@ -109,6 +109,7 @@ function deleteTransaction(id) {
     saveAndRender();
   }
 }
+
 // Modifier une transaction
 function editTransaction(id) {
   const t = transactions.find((t) => t.id === id);
