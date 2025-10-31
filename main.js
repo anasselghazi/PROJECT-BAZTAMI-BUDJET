@@ -1,4 +1,4 @@
-// Sélection des éléments
+//   LES VARIABLES 
 const form = document.getElementById("transaction-form");
 const descriptionInput = document.getElementById("description");
 const amountInput = document.getElementById("amount");
@@ -9,16 +9,16 @@ const totalIncome = document.getElementById("total-income");
 const totalExpense = document.getElementById("total-expense");
 const netBalance = document.getElementById("net-balance");
 
-// Charger les transactions depuis le localStorage
+//  localStorage
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-// Variable pour savoir si on est en mode édition
+// Variable pour modification
 let editId = null;
 
 // Afficher les transactions existantes
 renderTransactions();
 
-// Événement : ajouter ou modifier une transaction
+// Ajouter ou modifier une transaction
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
