@@ -48,7 +48,7 @@
     <h2 class="text-2xl font-bold mb-4">Ajouter une transaction </h2>
     <form id="transaction-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <input id="description" type="text" placeholder="Description" required class="border p-2 rounded-lg" />
-      <input id="amount" type="number" placeholder="Montant (€)" required class="border p-2 rounded-lg" />
+      <input id="amount" type="number" placeholder="Montant (€)" required class="border p-2 rounded-lg" min="0" />
       <select id="type" class="border p-2 rounded-lg">
         <option value="income">Revenu</option>
         <option value="expense">Dépense</option>
